@@ -1,6 +1,6 @@
 cd httpdocs
 git clone git@github.com:sawanoboly/sinatrafcgi.git
-chmod u+x sinatrafcgi/index.fcgi
+chmod u+x sinatrafcgi/dispatch.fcgi
 
 
 
