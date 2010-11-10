@@ -1,0 +1,16 @@
+# SetEnv RUBYLIB /opt/ruby1.8.7/lib
+# SetEnv GEM_HOME /opt/ruby1.8.7/lib/ruby/gems
+
+AddHandler fcgid-script .fcgi
+AddHandler cgi-script .cgi .rb
+
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+
+RewriteBase /sinatrafcgi
+
+RewriteRule ^$ dispatch.fcgi
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [L]
